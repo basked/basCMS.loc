@@ -54,8 +54,20 @@ class Router
     public function run()
     {
         if ($this->match()) {
-
-            echo '<p>controller:<b>'.$this->params['controller'].'/'.$this->params['action'].'</b></p>';
+            $path = 'application\controllers\\' . ucfirst($this->params['controller']) . 'Controller';
+            // существует ли найденный класс
+            if (class_exists($path)) {
+                //Существует ли найденый метод в класс
+                $action = $this->params['action'].'Action';
+                if (method_exists($path,$action)){
+                    $controller = new $path($this->params);
+                    $controller->$action();
+                } else {
+                    echo 'Action not found '.$action;
+                }
+            } else {
+                echo 'Class not found '.$path;
+            }
         } else {
             echo 'Route not found';
         }
