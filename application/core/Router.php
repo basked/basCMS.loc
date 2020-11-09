@@ -27,7 +27,7 @@ class Router
      */
     public function add($route, $params)
     {
-        //преобразуем роут на входе в роут как реулярку
+        //преобразуем роут на входе в роут как регулярку, для дальнейшего использования в match()
         $r = "#^" . $route . "$#";
         $this->routes[$r] = $params;
     }
@@ -46,7 +46,6 @@ class Router
                 $this->params = $params;
                 return true;
             }
-
         }
         return false;
     }

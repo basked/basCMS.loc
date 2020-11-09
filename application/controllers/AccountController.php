@@ -12,19 +12,29 @@ use application\core\Controller;
  */
 class AccountController extends Controller
 {
-    /**
-     *
-     */
-    function loginAction(){
-     echo "This login action";
- }
 
     /**
      *
      */
-    function registerAction(){
-     echo "This register action";
+    function loginAction()
+    {
+        //можем в экшне переопределить путь к вьюхе
+        //$this->view->path='account/register';
 
- }
+        //можем в экшне переопределить путь к layout
+        //$this->view->layout='custom';
+
+        $this->view->render('Вход');
+    }
+
+
+    /**
+     *
+     */
+    function registerAction()
+    {
+        $this->view->render('Регистрация');
+
+    }
 
 }
