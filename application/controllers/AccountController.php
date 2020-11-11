@@ -34,7 +34,6 @@ class AccountController extends Controller
     function registerAction()
     {
         $this->view->render('Регистрация');
-
     }
 
 }
