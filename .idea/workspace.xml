@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96eaf278-872d-4669-90f0-aa57afa3712d" name="Default Changelist" comment="Add vars parameters in View (render fun) &#10;Errors pages,  errorCode fun&#10;Redirect fun  in View">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/basCMS.loc.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/errors/403.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/errors/404.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AccountController.php" afterDir="false" />
+    <list default="true" id="96eaf278-872d-4669-90f0-aa57afa3712d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/application/config/db.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/lib/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/account/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/account/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/account/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/account/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/main/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +71,7 @@
       <workItem from="1604904946860" duration="1543000" />
       <workItem from="1604907296626" duration="18642000" />
       <workItem from="1604984929144" duration="2973000" />
-      <workItem from="1605078732823" duration="15002000" />
+      <workItem from="1605078732823" duration="16276000" />
     </task>
     <task id="LOCAL-00001">
       <created>1604925911168</created>
@@ -112,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605123316748</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add vars parameters in View (render fun) &#10;Errors pages,  errorCode fun&#10;Redirect fun  in View">
+      <created>1605273463017</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605273463017</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,12 +131,12 @@
     </state>
     <state x="284" y="179" key="#com.intellij.ide.util.MemberChooser/0.0.958.928@0.0.958.928" timestamp="1604927859631" />
     <state x="284" y="180" key="#com.intellij.ide.util.MemberChooser/0.0.958.935@0.0.958.935" timestamp="1605267607488" />
-    <state x="83" y="55" key="CommitChangelistDialog2" timestamp="1605273365443">
+    <state x="83" y="55" key="CommitChangelistDialog2" timestamp="1605273462552">
       <screen x="0" y="0" width="958" height="935" />
     </state>
     <state x="166" y="56" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1605123316153" />
     <state x="83" y="55" key="CommitChangelistDialog2/0.0.958.928@0.0.958.928" timestamp="1604929847427" />
-    <state x="83" y="55" key="CommitChangelistDialog2/0.0.958.935@0.0.958.935" timestamp="1605273365443" />
+    <state x="83" y="55" key="CommitChangelistDialog2/0.0.958.935@0.0.958.935" timestamp="1605273462552" />
     <state x="349" y="356" key="Github.ShareDialog" timestamp="1604925856009">
       <screen x="0" y="0" width="958" height="928" />
     </state>
@@ -149,25 +145,27 @@
       <screen x="0" y="0" width="958" height="928" />
     </state>
     <state x="241" y="168" key="Github.UntrackedFilesDialog/0.0.958.928@0.0.958.928" timestamp="1604925866157" />
-    <state x="184" y="277" key="NewPhpClassDialog" timestamp="1604929171755">
-      <screen x="0" y="0" width="958" height="928" />
+    <state x="184" y="279" key="NewPhpClassDialog" timestamp="1605273490993">
+      <screen x="0" y="0" width="958" height="935" />
     </state>
     <state x="184" y="277" key="NewPhpClassDialog/0.0.958.928@0.0.958.928" timestamp="1604929171755" />
-    <state x="628" y="392" key="NewPhpFileDialog" timestamp="1605266248911">
+    <state x="184" y="279" key="NewPhpClassDialog/0.0.958.935@0.0.958.935" timestamp="1605273490993" />
+    <state x="628" y="392" key="NewPhpFileDialog" timestamp="1605273684159">
       <screen x="0" y="0" width="958" height="935" />
     </state>
     <state x="1275" y="394" key="NewPhpFileDialog/0.0.1920.944@0.0.1920.944" timestamp="1604906440861" />
     <state x="628" y="389" key="NewPhpFileDialog/0.0.958.928@0.0.958.928" timestamp="1604919622764" />
-    <state x="628" y="392" key="NewPhpFileDialog/0.0.958.935@0.0.958.935" timestamp="1605266248911" />
+    <state x="628" y="392" key="NewPhpFileDialog/0.0.958.935@0.0.958.935" timestamp="1605273684159" />
     <state x="317" y="380" key="VCS.ChangelistChooser" timestamp="1604925966664">
       <screen x="0" y="0" width="958" height="928" />
     </state>
     <state x="317" y="380" key="VCS.ChangelistChooser/0.0.958.928@0.0.958.928" timestamp="1604925966664" />
-    <state x="142" y="199" key="Vcs.Push.Dialog.v2" timestamp="1605123319111">
-      <screen x="0" y="0" width="1920" height="944" />
+    <state x="71" y="197" key="Vcs.Push.Dialog.v2" timestamp="1605273469834">
+      <screen x="0" y="0" width="958" height="935" />
     </state>
     <state x="142" y="199" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1605123319111" />
     <state x="71" y="196" key="Vcs.Push.Dialog.v2/0.0.958.928@0.0.958.928" timestamp="1604929879722" />
+    <state x="71" y="197" key="Vcs.Push.Dialog.v2/0.0.958.935@0.0.958.935" timestamp="1605273469834" />
     <state x="655" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1605078732555">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
