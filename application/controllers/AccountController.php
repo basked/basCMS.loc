@@ -23,8 +23,9 @@ class AccountController extends Controller
 
         //можем в экшне переопределить путь к layout
         //$this->view->layout='custom';
-
+        $this->view->redirect('/');
         $this->view->render('Вход');
+
     }
 
 

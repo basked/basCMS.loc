@@ -1,6 +1,7 @@
 <?php
 
 namespace application\core;
+use application\core\View;
 /**
  * Class Router
  */
@@ -57,18 +58,18 @@ class Router
             // существует ли найденный класс
             if (class_exists($path)) {
                 //Существует ли найденый метод в класс
-                $action = $this->params['action'].'Action';
-                if (method_exists($path,$action)){
+                $action = $this->params['action'] . 'Action';
+                if (method_exists($path, $action)) {
                     $controller = new $path($this->params);
                     $controller->$action();
                 } else {
-                    echo 'Action not found '.$action;
+                    View::errorCode(404, 'Action not found ' . $action);
                 }
             } else {
-                echo 'Class not found '.$path;
+                View::errorCode(404, 'Class not found ' . $path);
             }
         } else {
-            echo 'Route not found';
+            View::errorCode(404, 'Route not found');
         }
     }
 }

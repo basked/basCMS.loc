@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="96eaf278-872d-4669-90f0-aa57afa3712d" name="Default Changelist" comment="Add vars parameters in View (render fun) &#10;Errors pages,  errorCode fun&#10;Redirect fun  in View">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/basCMS.loc.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/errors/403.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/errors/404.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/core/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/account/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/account/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/account/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/account/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/main/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/index.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basCMS.loc\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1k2iAk6S1dFsAIoDOf4ZhCLIgwb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\cms_bas.loc" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="96eaf278-872d-4669-90f0-aa57afa3712d" name="Default Changelist" comment="" />
+      <created>1604904945620</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604904945620</updated>
+      <workItem from="1604904946860" duration="1543000" />
+      <workItem from="1604907296626" duration="18642000" />
+      <workItem from="1604984929144" duration="2973000" />
+      <workItem from="1605078732823" duration="15002000" />
+    </task>
+    <task id="LOCAL-00001">
+      <created>1604925911168</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604925911169</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Make structure application&#10;Make routes&#10;Make class Route">
+      <created>1604926024167</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604926024167</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Make structure application&#10;Make routes&#10;Make class Route&#10;Add functional for Route class">
+      <created>1604929811248</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604929811248</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add functional for Route class">
+      <created>1605123316748</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605123316748</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Make structure application&#10;Make routes&#10;Make class Route" />
+    <MESSAGE value="Make structure application&#10;Make routes&#10;Make class Route&#10;Add functional for Route class" />
+    <MESSAGE value="Add functional for Route class" />
+    <MESSAGE value="Add vars parameters in View (render fun) &#10;Errors pages,  errorCode fun&#10;Redirect fun  in View" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add vars parameters in View (render fun) &#10;Errors pages,  errorCode fun&#10;Redirect fun  in View" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="71" y="121" key="#Inspections" timestamp="1604911353588">
+      <screen x="0" y="0" width="958" height="928" />
+    </state>
+    <state x="71" y="121" key="#Inspections/0.0.958.928@0.0.958.928" timestamp="1604911353588" />
+    <state x="284" y="180" key="#com.intellij.ide.util.MemberChooser" timestamp="1605267607488">
+      <screen x="0" y="0" width="958" height="935" />
+    </state>
+    <state x="284" y="179" key="#com.intellij.ide.util.MemberChooser/0.0.958.928@0.0.958.928" timestamp="1604927859631" />
+    <state x="284" y="180" key="#com.intellij.ide.util.MemberChooser/0.0.958.935@0.0.958.935" timestamp="1605267607488" />
+    <state x="83" y="55" key="CommitChangelistDialog2" timestamp="1605273365443">
+      <screen x="0" y="0" width="958" height="935" />
+    </state>
+    <state x="166" y="56" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1605123316153" />
+    <state x="83" y="55" key="CommitChangelistDialog2/0.0.958.928@0.0.958.928" timestamp="1604929847427" />
+    <state x="83" y="55" key="CommitChangelistDialog2/0.0.958.935@0.0.958.935" timestamp="1605273365443" />
+    <state x="349" y="356" key="Github.ShareDialog" timestamp="1604925856009">
+      <screen x="0" y="0" width="958" height="928" />
+    </state>
+    <state x="349" y="356" key="Github.ShareDialog/0.0.958.928@0.0.958.928" timestamp="1604925856009" />
+    <state x="241" y="168" key="Github.UntrackedFilesDialog" timestamp="1604925866157">
+      <screen x="0" y="0" width="958" height="928" />
+    </state>
+    <state x="241" y="168" key="Github.UntrackedFilesDialog/0.0.958.928@0.0.958.928" timestamp="1604925866157" />
+    <state x="184" y="277" key="NewPhpClassDialog" timestamp="1604929171755">
+      <screen x="0" y="0" width="958" height="928" />
+    </state>
+    <state x="184" y="277" key="NewPhpClassDialog/0.0.958.928@0.0.958.928" timestamp="1604929171755" />
+    <state x="628" y="392" key="NewPhpFileDialog" timestamp="1605266248911">
+      <screen x="0" y="0" width="958" height="935" />
+    </state>
+    <state x="1275" y="394" key="NewPhpFileDialog/0.0.1920.944@0.0.1920.944" timestamp="1604906440861" />
+    <state x="628" y="389" key="NewPhpFileDialog/0.0.958.928@0.0.958.928" timestamp="1604919622764" />
+    <state x="628" y="392" key="NewPhpFileDialog/0.0.958.935@0.0.958.935" timestamp="1605266248911" />
+    <state x="317" y="380" key="VCS.ChangelistChooser" timestamp="1604925966664">
+      <screen x="0" y="0" width="958" height="928" />
+    </state>
+    <state x="317" y="380" key="VCS.ChangelistChooser/0.0.958.928@0.0.958.928" timestamp="1604925966664" />
+    <state x="142" y="199" key="Vcs.Push.Dialog.v2" timestamp="1605123319111">
+      <screen x="0" y="0" width="1920" height="944" />
+    </state>
+    <state x="142" y="199" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1605123319111" />
+    <state x="71" y="196" key="Vcs.Push.Dialog.v2/0.0.958.928@0.0.958.928" timestamp="1604929879722" />
+    <state x="655" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1605078732555">
+      <screen x="0" y="0" width="1920" height="944" />
+    </state>
+    <state x="655" y="294" key="com.intellij.ide.util.TipDialog/0.0.1920.944@0.0.1920.944" timestamp="1605078732555" />
+    <state x="619" y="160" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605080920185">
+      <screen x="0" y="0" width="1920" height="944" />
+    </state>
+    <state x="619" y="160" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.944@0.0.1920.944" timestamp="1605080920185" />
+    <state x="384" y="384" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605265888573">
+      <screen x="0" y="0" width="958" height="935" />
+    </state>
+    <state x="769" y="388" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.944@0.0.1920.944" timestamp="1605078738256" />
+    <state x="384" y="384" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.958.935@0.0.958.935" timestamp="1605265888573" />
+    <state x="204" y="254" key="git4idea.merge.GitPullDialog" timestamp="1604929860805">
+      <screen x="0" y="0" width="958" height="928" />
+    </state>
+    <state x="204" y="254" key="git4idea.merge.GitPullDialog/0.0.958.928@0.0.958.928" timestamp="1604929860805" />
+    <state x="135" y="109" width="670" height="676" key="search.everywhere.popup" timestamp="1605273072670">
+      <screen x="0" y="0" width="958" height="935" />
+    </state>
+    <state x="135" y="109" width="670" height="676" key="search.everywhere.popup/0.0.958.935@0.0.958.935" timestamp="1605273072670" />
+  </component>
+</project>
