@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96eaf278-872d-4669-90f0-aa57afa3712d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/application/config/db.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/lib/Database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/core/Model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Main.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/user/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/core/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/core/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/Database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +36,13 @@
       </set>
     </option>
   </component>
+  <component name="PHPCodeSnifferBlackList">
+    <option name="filePaths">
+      <list>
+        <option value="$PROJECT_DIR$/application/lib/Database.php" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1k2iAk6S1dFsAIoDOf4ZhCLIgwb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -37,8 +52,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/views/user" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
   </component>
   <component name="RecentsManager">
@@ -72,6 +88,8 @@
       <workItem from="1604907296626" duration="18642000" />
       <workItem from="1604984929144" duration="2973000" />
       <workItem from="1605078732823" duration="16276000" />
+      <workItem from="1605283643182" duration="1589000" />
+      <workItem from="1605286289785" duration="15086000" />
     </task>
     <task id="LOCAL-00001">
       <created>1604925911168</created>
@@ -126,9 +144,14 @@
       <screen x="0" y="0" width="958" height="928" />
     </state>
     <state x="71" y="121" key="#Inspections/0.0.958.928@0.0.958.928" timestamp="1604911353588" />
-    <state x="284" y="180" key="#com.intellij.ide.util.MemberChooser" timestamp="1605267607488">
-      <screen x="0" y="0" width="958" height="935" />
+    <state x="0" y="3" key="#PHP_CodeSniffer_Ignored_Files" timestamp="1605285614953">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="0" y="3" key="#PHP_CodeSniffer_Ignored_Files/0.0.1280.680@0.0.1280.680" timestamp="1605285614953" />
+    <state x="379" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1605298448926">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="379" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1605298448926" />
     <state x="284" y="179" key="#com.intellij.ide.util.MemberChooser/0.0.958.928@0.0.958.928" timestamp="1604927859631" />
     <state x="284" y="180" key="#com.intellij.ide.util.MemberChooser/0.0.958.935@0.0.958.935" timestamp="1605267607488" />
     <state x="83" y="55" key="CommitChangelistDialog2" timestamp="1605273462552">
@@ -145,14 +168,16 @@
       <screen x="0" y="0" width="958" height="928" />
     </state>
     <state x="241" y="168" key="Github.UntrackedFilesDialog/0.0.958.928@0.0.958.928" timestamp="1604925866157" />
-    <state x="184" y="279" key="NewPhpClassDialog" timestamp="1605273490993">
-      <screen x="0" y="0" width="958" height="935" />
+    <state x="246" y="203" key="NewPhpClassDialog" timestamp="1605298590392">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="246" y="203" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1605298590392" />
     <state x="184" y="277" key="NewPhpClassDialog/0.0.958.928@0.0.958.928" timestamp="1604929171755" />
     <state x="184" y="279" key="NewPhpClassDialog/0.0.958.935@0.0.958.935" timestamp="1605273490993" />
-    <state x="628" y="392" key="NewPhpFileDialog" timestamp="1605273684159">
-      <screen x="0" y="0" width="958" height="935" />
+    <state x="839" y="285" key="NewPhpFileDialog" timestamp="1605298685011">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="839" y="285" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1605298685011" />
     <state x="1275" y="394" key="NewPhpFileDialog/0.0.1920.944@0.0.1920.944" timestamp="1604906440861" />
     <state x="628" y="389" key="NewPhpFileDialog/0.0.958.928@0.0.958.928" timestamp="1604919622764" />
     <state x="628" y="392" key="NewPhpFileDialog/0.0.958.935@0.0.958.935" timestamp="1605273684159" />
@@ -166,9 +191,10 @@
     <state x="142" y="199" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1605123319111" />
     <state x="71" y="196" key="Vcs.Push.Dialog.v2/0.0.958.928@0.0.958.928" timestamp="1604929879722" />
     <state x="71" y="197" key="Vcs.Push.Dialog.v2/0.0.958.935@0.0.958.935" timestamp="1605273469834" />
-    <state x="655" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1605078732555">
-      <screen x="0" y="0" width="1920" height="944" />
+    <state x="437" y="212" key="com.intellij.ide.util.TipDialog" timestamp="1605286309532">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="437" y="212" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1605286309532" />
     <state x="655" y="294" key="com.intellij.ide.util.TipDialog/0.0.1920.944@0.0.1920.944" timestamp="1605078732555" />
     <state x="619" y="160" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605080920185">
       <screen x="0" y="0" width="1920" height="944" />
@@ -183,6 +209,10 @@
       <screen x="0" y="0" width="958" height="928" />
     </state>
     <state x="204" y="254" key="git4idea.merge.GitPullDialog/0.0.958.928@0.0.958.928" timestamp="1604929860805" />
+    <state x="622" y="225" key="run.anything.popup" timestamp="1605289120320">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="622" y="225" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1605289120320" />
     <state x="135" y="109" width="670" height="676" key="search.everywhere.popup" timestamp="1605273072670">
       <screen x="0" y="0" width="958" height="935" />
     </state>

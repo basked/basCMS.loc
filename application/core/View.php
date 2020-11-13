@@ -49,6 +49,7 @@ class View
     function render($title, $vars = [])
     {
         extract($vars);
+
         $pathView = 'application/views/' . $this->path . '.php';
         if (file_exists($pathView)) {
             // перед загрузкой контента запускаем ob_start
