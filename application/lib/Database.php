@@ -37,7 +37,6 @@ class Database
             $stmt = $this->db->prepare($sql);
             if (!empty($params)) {
                 foreach ($params as $key => $val) {
-                   echo "$key => $val<br>";
                     $stmt->bindValue(':' . $key, $val);
                 }
             }

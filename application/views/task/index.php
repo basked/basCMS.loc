@@ -1,8 +1,10 @@
-<?php if($is_admin){ echo $is_admin;} ?>
+<?php //if ($is_admin) {
+//    echo $is_admin;
+//} ?>
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <p><?php echo $title ?></p>
+            <p><h3><?php echo $title ?></h3></p>
             <hr>
         </div>
     </div>
@@ -23,7 +25,7 @@
                     <th scope="col">Текст задачи</th>
                     <th scope="col">Статус</th>
                     <?php if ($is_admin): ?>
-                    <th scope="col">Действия</th>
+                        <th scope="col">Действия</th>
                     <?php endif; ?>
                 </tr>
                 </thead>
@@ -47,7 +49,9 @@
                         </td>
                         <td>
                             <?php if ($is_admin): ?>
-                                <a class="btn btn-light btn-sm" href="/account/login" role="button">Редактировать</a>
+                                <a class="btn btn-light btn-sm"
+                                   <?php echo "href=/tasks/edit/" . $task['id'] ?>
+                                   role="button">Редактировать</a>
                             <?php endif; ?>
                         </td>
                     </tr>

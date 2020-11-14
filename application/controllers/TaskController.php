@@ -13,8 +13,7 @@ class TaskController extends  Controller
      * All tasks
      */
     public function indexAction(){
-        $task = new Task();
-        $tasks=$this->model->getTasks();
+        $tasks=$this->model->allTasks();
         $this->view->render('Менеджер задач' ,['tasks'=> $tasks,'is_admin'=>1]);
     }
 
@@ -22,14 +21,14 @@ class TaskController extends  Controller
      * Add tasks
      */
     public function addAction(){
-        $this->view->render('Добвление задачи'  );
+        $this->view->render('Новая задача'  );
     }
 
     /**
      * Edit tasks
      */
     public function editAction(){
-
-        $this->view->render('Редактировние задачи' );
+        $task=$this->model->oneTask($this->route['id']);
+        $this->view->render('Редактировние задачи #'.$this->route['id'], ['task'=> $task]);
     }
 }

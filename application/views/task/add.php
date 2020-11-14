@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <p><?php echo $title ?></p>
+            <p><h3><?php echo $title ?></h3></p>
             <hr>
         </div>
     </div>
