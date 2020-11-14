@@ -1,9 +1,19 @@
 <?php
 return [
+    // tasks
     '' => [
-        'controller' => 'main',
+        'controller' => 'task',
         'action' => 'index'
     ],
+    'tasks/add' => [
+        'controller' => 'task',
+        'action' => 'add'
+    ],
+    'tasks/edit/{id:\d+}' => [
+        'controller' => 'task',
+        'action' => 'edit'
+    ],
+
     'account/login' => [
         'controller' => 'account',
         'action' => 'login'
@@ -12,14 +22,7 @@ return [
         'controller' => 'account',
         'action' => 'register'
     ],
-    'news/edit' => [
-        'controller' => 'news',
-        'action' => 'edit',
-    ],
-    'news/show' => [
-        'controller' => 'news',
-        'action' => 'show',
-    ],
+
     // users
     'users/index' => [
         'controller' => 'user',
@@ -30,9 +33,17 @@ return [
         'action' => 'sort'
     ],
 
-    // tasks
-    'tasks/index' => [
-        'controller' => 'task',
+    // dev
+    'dev/index/{id:\d+}' => [
+        'controller' => 'dev',
         'action' => 'index'
+    ],
+    'dev/add/{id:\w+}' => [
+        'controller' => 'dev',
+        'action' => 'add'
+    ],
+    'dev/add' => [
+        'controller' => 'dev',
+        'action' => 'add'
     ],
 ];

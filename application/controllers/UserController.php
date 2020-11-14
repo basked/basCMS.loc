@@ -15,10 +15,5 @@ class UserController extends Controller
         $this->view->render('Пользователи', $vars);
     }
 
-    public function sortAction()
-    {
-        $users = $this->model->getUsers('DESC');
-        $vars=['users'=>$users];
-        $this->view->render('Пользователи', $vars);
-    }
+
 }

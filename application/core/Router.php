@@ -1,7 +1,9 @@
 <?php
 
 namespace application\core;
+
 use application\core\View;
+
 /**
  * Class Router
  */
@@ -28,8 +30,9 @@ class Router
      */
     public function add($route, $params)
     {
+        $r = preg_replace('/{([a-z]+):([^\}]+)}/', '(?P<\1>\2)', $route);
         //преобразуем роут на входе в роут как регулярку, для дальнейшего использования в match()
-        $r = "#^" . $route . "$#";
+        $r = "#^" . $r . "$#";
         $this->routes[$r] = $params;
     }
 
@@ -44,6 +47,14 @@ class Router
         // перебираем масив роутов и пытаемся находим текущий маршрут
         foreach ($this->routes as $route => $params) {
             if (preg_match($route, $url, $matches)) {
+                foreach ($matches as $key => $match) {
+                    if (is_string($key)) {
+                        if (is_numeric($match)) {
+                            $match = (int)$match;
+                        }
+                        $params[$key] = $match;
+                    }
+                }
                 $this->params = $params;
                 return true;
             }
@@ -54,6 +65,7 @@ class Router
     public function run()
     {
         if ($this->match()) {
+
             $path = 'application\controllers\\' . ucfirst($this->params['controller']) . 'Controller';
             // существует ли найденный класс
             if (class_exists($path)) {

@@ -10,9 +10,7 @@ namespace application\core;
  */
 abstract class Controller
 {
-    /**
-     * @var
-     */
+
     public $route;
     public $view;
     public $model;

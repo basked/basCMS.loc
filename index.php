@@ -12,8 +12,9 @@ spl_autoload_register(function ($class) {
         require $path;
     }
 });
-
+$_SESSION['user_name']='basket';
 session_start();
+
 $router = new Router();
 $router->run();
 
