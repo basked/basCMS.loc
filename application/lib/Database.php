@@ -31,12 +31,13 @@ class Database
      * @param $sql
      * @return false|\PDOStatement
      */
-    public function query($sql, $params)
+    public function query($sql, $params=[])
     {
         try {
             $stmt = $this->db->prepare($sql);
             if (!empty($params)) {
                 foreach ($params as $key => $val) {
+                   echo "$key => $val<br>";
                     $stmt->bindValue(':' . $key, $val);
                 }
             }
@@ -64,7 +65,7 @@ class Database
      * @param $sql
      * @return array
      */
-    public function column($sql, $params)
+    public function column($sql, $params=[])
     {
         $res = $this->query($sql, $params);
         return $res->fetchColumn();

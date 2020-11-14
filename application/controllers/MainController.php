@@ -3,15 +3,15 @@
 namespace application\controllers;
 
 use application\core\Controller;
-use application\core\View;
-use application\lib\Database;
-use application\models\Main;
+use application\models\Task;
 
 
 class MainController extends Controller
 {
  public function indexAction(){
-  $res=$this->model->getNews();
-     $this->view->render('Главная страница! ' );
+     $task = new Task();
+     $this->model=$task;
+     $tasks=$this->model->getTasks();
+     $this->view->render('Task manager' ,['tasks'=> $tasks]);
  }
 }

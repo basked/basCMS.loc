@@ -22,4 +22,12 @@ class User extends Model
         $res = $this->db->rows('SELECT * FROM users WHERE id>=:id ORDER BY name DESC',['id'=>1]);
         return $res;
     }
+
+    public function getUserById($id)
+    {
+        $res = $this->db->rows('SELECT * FROM users WHERE id=:id ');
+        return $res;
+    }
+
+
 }

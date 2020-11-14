@@ -101,5 +101,21 @@ class View
         exit;
     }
 
+    /**
+     * Return message for JS
+     * @param $status
+     * @param $message
+     */
+     public function message($status,$message){
+         exit(json_decode(['status'=>$status,'message'=>$message]));
+     }
 
+    /**
+     * Redirect for JS
+     * @param $status
+     * @param $message
+     */
+    public function location($url){
+        exit(json_encode(['url'=>$url]));
+    }
 }

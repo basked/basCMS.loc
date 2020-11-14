@@ -29,4 +29,10 @@ return [
         'controller' => 'user',
         'action' => 'sort'
     ],
+
+    // tasks
+    'tasks/index' => [
+        'controller' => 'task',
+        'action' => 'index'
+    ],
 ];

@@ -20,12 +20,14 @@ class AccountController extends Controller
     {
         //можем в экшне переопределить путь к вьюхе
         //$this->view->path='account/register';
-
         //можем в экшне переопределить путь к layout
-        //$this->view->layout='custom';
-        $this->view->redirect('/');
+         //$this->view->layout='custom';
+//        fun impl = TODO();
+        if (!empty($_POST)) {
+            $this->view->message('error', 'Вход в систему');
+            $this->view->location('/');
+        }
         $this->view->render('Вход');
-
     }
 
 
