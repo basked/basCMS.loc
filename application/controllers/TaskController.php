@@ -71,10 +71,7 @@ class TaskController extends Controller
      */
     public function addAction()
     {
-
-        echo 'addAction';
         if (!empty($_POST)) {
-
             if (!$this->model->taskValidate($_POST, 'add')) {
                 $this->view->message('error', $this->model->error);
             }
@@ -82,9 +79,10 @@ class TaskController extends Controller
             if (!$id) {
                 $this->view->message('success', 'Ошибка обработки запроса');
             }
-            $this->view->message('success', 'Пост добавлен');
+//            $this->view->message('success', 'Задача добавлена');
         }
-        $this->view->render('Новая задача');
+//        $this->view->render('Новая задача');
+        $this->view->location('/');
     }
 
     /**

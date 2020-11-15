@@ -107,7 +107,7 @@ class View
      * @param $message
      */
      public function message($status,$message){
-         exit(json_decode(['status'=>$status,'message'=>$message]));
+         exit(json_encode(['status'=>$status,'message'=>$message]));
      }
 
     /**

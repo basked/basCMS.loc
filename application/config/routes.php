@@ -25,6 +25,11 @@ return [
         'controller' => 'task',
         'action' => 'edit'
     ],
+    'tasks/delete/{id:\d+}' => [
+        'controller' => 'task',
+        'action' => 'delete'
+    ],
+
 
     // account
     'account/login' => [
@@ -34,20 +39,6 @@ return [
     'account/logout' => [
         'controller' => 'account',
         'action' => 'logout'
-    ],
-    'account/register' => [
-        'controller' => 'account',
-        'action' => 'register'
-    ],
-
-    // users
-    'users/index' => [
-        'controller' => 'user',
-        'action' => 'index'
-    ],
-    'users/sort' => [
-        'controller' => 'user',
-        'action' => 'sort'
     ],
 
     // dev

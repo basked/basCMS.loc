@@ -12,8 +12,6 @@ use application\core\Model;
 class Task extends Model
 {
 
-
-
     /**
      * Return all tasks
      * @return array
@@ -21,7 +19,7 @@ class Task extends Model
     public function oneTask($id)
     {
         $params=['id'=>$id];
-        $tasks = $this->db->row('SELECT u.name, u.email, t.id, t.task_txt, t.is_completed FROM tasks t, users u WHERE t.id=u.id and t.id=:id',$params);
+        $tasks = $this->db->row('SELECT name, email, description FROM tasks  WHERE  id=:id',$params);
         return $tasks[0];
     }
 
@@ -46,51 +44,47 @@ class Task extends Model
         $params = [
             'max' => $max,
             'start' => ((($route['page'] ?? 1) - 1) * $max),
-//            'sortField' => $_SESSION['sortField'],
-//            'sortType' => $_SESSION['sortType'],
         ];
-        echo  $sortField.'=>'.   $sortType ;
-        return $this->db->row('SELECT u.name, u.email, t.id, t.task_txt, t.is_completed FROM tasks t, users u WHERE t.user_id=u.id  ORDER BY '.$sortField.' '. $sortType.'  LIMIT :start, :max', $params);
+        return $this->db->row('SELECT id, name, email,  description, is_completed, is_edited FROM tasks   ORDER BY '.$sortField.' '. $sortType.'  LIMIT :start, :max', $params);
     }
 
+    /**
+     * @param $post
+     * @return string
+     */
     public function taskAdd($post) {
-        echo 'taskAdd';
         $params = [
-            'user_id' => 1,
-            'task_txt' => $post['task_txt'],
-            'is_completed' => 0,
+            'name' => $post['name'],
+            'email' =>  $post['email'],
+            'description' => $post['description'],
         ];
-        $this->db->query('INSERT INTO tasks VALUES (:user_id, :task_txt, :is_completed)', $params);
+        $this->db->query('INSERT INTO tasks( name, email, description) VALUES(:name, :email, :description)', $params);
         return $this->db->lastInsertId();
     }
 
-
+    /**
+     * @param $post
+     * @param $type
+     * @return bool
+     */
     public function taskValidate($post, $type) {
 
-/*
-        user_id: sdf
-email: sdf
-task_txt: sdf
-        */
-        echo '<br>'.'lasas';
         $nameLen = iconv_strlen($post['name']);
-        $descriptionLen = iconv_strlen($post['email']);
-        $textLen = iconv_strlen($post['task_txt']);
+        $emailLen = iconv_strlen($post['email']);
+        $textLen = iconv_strlen($post['description']);
+
         if ($nameLen < 3 or $nameLen > 100) {
             $this->error = 'Название должно содержать от 3 до 100 символов';
             return false;
-        } elseif ($descriptionLen < 3 or $descriptionLen > 100) {
+        } elseif ($emailLen < 3 or $emailLen > 100) {
             $this->error = 'Описание должно содержать от 3 до 100 символов';
             return false;
-        } elseif ($textLen < 10 or $textLen > 5000) {
-            $this->error = 'Текст должнен содержать от 10 до 5000 символов';
-            return false;
-        }
-        if (empty($_FILES['img']['tmp_name']) and $type == 'add') {
-            $this->error = 'Изображение не выбрано';
+        } elseif ($textLen < 5 or $textLen > 5000) {
+            $this->error = 'Текст должнен содержать от 5 до 5000 символов';
             return false;
         }
         return true;
     }
+
 
 }

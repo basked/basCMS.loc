@@ -17,8 +17,8 @@
                     <input name="email" id="email" type="text" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="task_txt">Текст задачи </label>
-                    <textarea name="task_txt" id="task_txt" class="form-control" rows="3"></textarea>
+                    <label for="description">Текст задачи </label>
+                    <textarea name="description" id="description" class="form-control" rows="3"></textarea>
                 </div>
                 <div class="form-group">
                     <button name="register" type="submit" class="btn btn-primary">Сохранить</button>

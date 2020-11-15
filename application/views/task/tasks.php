@@ -1,7 +1,6 @@
 <div class="container">
      <br>
     <div class="row">
-
         <?php if ($is_admin): ?>
             <div class="col-sm-12">
                 <a class="btn btn-outline-danger btn-sm  float-right" href="/account/logout" role="button">Выход</a>
@@ -14,7 +13,6 @@
         <?php endif; ?>
         <div class="col-sm-12">
             <p><h3><?php echo $title ?></h3></p>
-
             <hr>
         </div>
     </div>
@@ -29,16 +27,10 @@
             <table class="table table-dark">
                 <thead>
                 <tr>
-<!--                    fa-sort-asc и fa-sort-des-->
-
-<!--                    <th scope="col"><b>#</b>Имя пользователя <a href="/" class="fa fa-sort_--><?php //echo $sortType;?><!--"></a></th>-->
-                    <th scope="col"><b>#</b>Имя пользователя <a href="/name_<?php echo $sortTypeTo?>" class="fa fa-sort-<?php echo $sortType;?>" aria-hidden="true"></a></th>
-                    <th scope="col"><b>#</b>Email <a href="/email_<?php echo $sortTypeTo?>" class="fa fa-sort-<?php echo $sortType;?>" aria-hidden="true"></a></th>
-
-                    <th scope="col"><b>#</b>Текст задачи <i class="fa fa-sort-desc" aria-hidden="true"></i></th>
-
-                    <th scope="col"><b>#</b>Статус <i class="fa fa-sort-desc" aria-hidden="true"></i></th>
-
+                    <th scope="col"><b>#</b>Имя пользователя <a href="/name_<?php echo $sortTypeTo?>" class="fa fa-sort-<?php echo $sortType;?>"></a></th>
+                    <th scope="col"><b>#</b>Email <a href="/email_<?php echo $sortTypeTo?>" class="fa fa-sort-<?php echo $sortType;?>"></a></th>
+                    <th scope="col"><b>#</b>Текст задачи <a href="/description_<?php echo $sortTypeTo?>" class="fa fa-sort-<?php echo $sortType;?>"></a></th>
+                     <th scope="col"><b>#</b>Статус <i class="fa fa-sort-desc" aria-hidden="true"></i></th>
                     <?php if ($is_admin): ?>
                         <th scope="col">Действия</th>
                     <?php endif; ?>
@@ -49,7 +41,7 @@
                     <tr>
                         <td> <?php echo $task['name']; ?> </td>
                         <td> <?php echo $task['email']; ?>  </td>
-                        <td> <?php echo htmlspecialchars( $task['task_txt'], ENT_QUOTES); ?></td>
+                        <td> <?php echo htmlspecialchars( $task['description'], ENT_QUOTES); ?></td>
                         <td>
                             <div class="form-check">
                                 <input id="chk_completed_task"
