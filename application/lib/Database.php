@@ -31,13 +31,18 @@ class Database
      * @param $sql
      * @return false|\PDOStatement
      */
-    public function query($sql, $params=[])
+    public function query($sql, $params = [])
     {
         try {
             $stmt = $this->db->prepare($sql);
             if (!empty($params)) {
                 foreach ($params as $key => $val) {
-                    $stmt->bindValue(':' . $key, $val);
+                    if (is_int($val)) {
+                        $type = PDO::PARAM_INT;
+                    } else {
+                        $type = PDO::PARAM_STR;
+                    }
+                    $stmt->bindValue(':' . $key, $val, $type);
                 }
             }
             $stmt->execute();
@@ -52,7 +57,7 @@ class Database
      * @param array $params
      * @return array
      */
-    public function rows($sql, $params = [])
+    public function row($sql, $params = [])
     {
         $res = $this->query($sql, $params);
         return $res->fetchAll(PDO::FETCH_ASSOC);
@@ -64,10 +69,18 @@ class Database
      * @param $sql
      * @return array
      */
-    public function column($sql, $params=[])
+    public function column($sql, $params = [])
     {
         $res = $this->query($sql, $params);
         return $res->fetchColumn();
     }
 
+    /**
+     * Return Last Insert Id
+     * @return string
+     */
+    public function lastInsertId()
+    {
+        return $this->db->lastInsertId();
+    }
 }

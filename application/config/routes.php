@@ -1,9 +1,21 @@
 <?php
 return [
     // tasks
+    '{sort:\w+}' => [
+        'controller' => 'task',
+        'action' => 'tasks'
+    ],
     '' => [
         'controller' => 'task',
-        'action' => 'index'
+        'action' => 'tasks'
+    ],
+    'task/tasks/{page:\d+}' => [
+        'controller' => 'task',
+        'action' =>  'tasks',
+    ],
+    'tasks/create' => [
+        'controller' => 'task',
+        'action' => 'create'
     ],
     'tasks/add' => [
         'controller' => 'task',
@@ -13,7 +25,8 @@ return [
         'controller' => 'task',
         'action' => 'edit'
     ],
-   // account
+
+    // account
     'account/login' => [
         'controller' => 'account',
         'action' => 'login'
@@ -46,7 +59,7 @@ return [
         'controller' => 'dev',
         'action' => 'index'
     ],
-    'dev/add/{id:\w+}' => [
+    'dev/add/{name:\w+}' => [
         'controller' => 'dev',
         'action' => 'add'
     ],

@@ -7,10 +7,10 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <form action="/add" method="post">
+            <form action="/tasks/add" method="post">
                 <div class="form-group">
                     <label for="email">Пользователь</label>
-                    <input name="user_id" id="user" type="text" class="form-control">
+                    <input name="name" id="name" type="text" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -28,4 +28,4 @@
         </div>
 
     </div>
-</div>
+</div><?php

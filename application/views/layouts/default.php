@@ -2,17 +2,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- CSS -->
-<link rel="stylesheet" href="../../../public/styles/bootstrap.min.css"/>
+    <!-- JS -->
     <script src="../../../public/scripts/jquery.js"></script>
-    <script src="../../../public/scripts/form2.js"></script>
+    <script src="../../../public/scripts/form.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../public/styles/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../../public/styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../../public/styles/styles.css"/>
 
-    <title>  <?php echo $title?></title>
+
+    <title>  <?php echo $title ?></title>
 </head>
 <body>
- <?php echo $content;?>
+<?php echo $content; ?>
 
  <script src="../../../public/scripts/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

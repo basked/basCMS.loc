@@ -14,6 +14,8 @@ spl_autoload_register(function ($class) {
 });
 
 session_start();
+$_SESSION['sortField']='name';
+$_SESSION['sortType']='asc';
 $router = new Router();
 $router->run();
 

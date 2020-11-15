@@ -1,9 +1,6 @@
 <?php
 
-
 namespace application\controllers;
-
-
 use application\core\Controller;
 
 class DevController extends Controller
@@ -17,9 +14,7 @@ class DevController extends Controller
 
     function addAction()
     {
-        if (isset($this->route['id'])) {
-            echo $this->route['id'];
-        };
         echo 'indexAction';
+        echo $this->route['name'];
     }
 }
