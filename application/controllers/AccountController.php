@@ -30,6 +30,15 @@ class AccountController extends Controller
         $this->view->render('Вход');
     }
 
+    /**
+     * Logout
+     */
+    function logoutAction()
+    {
+        unset($_SESSION['is_admin']);
+        $this->view->redirect('/');
+    }
+
 
     /**
      *

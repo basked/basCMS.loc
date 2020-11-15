@@ -1,8 +1,16 @@
-<?php //if ($is_admin) {
-//    echo $is_admin;
-//} ?>
-<div class="container">
+ <div class="container">
     <div class="row">
+        <br>
+        <?php if ($is_admin): ?>
+            <div class="col-sm-12">
+                <a class="btn btn-outline-danger btn-sm  float-right" href="/account/logout" role="button">Выход</a>
+            </div>
+        <?php endif; ?>
+        <?php if (!$is_admin): ?>
+            <div class="col-sm-12">
+                <a class="btn btn-outline-info btn-sm  float-right" href="/account/login" role="button">Авторизация</a>
+            </div>
+        <?php endif; ?>
         <div class="col-sm-12">
             <p><h3><?php echo $title ?></h3></p>
             <hr>
@@ -11,7 +19,6 @@
     <div class="row">
         <div class="col-sm-12">
             <a class="btn btn-outline-dark btn-sm" href="/tasks/add" role="button">Новая задача</a>
-            <a class="btn btn-outline-dark btn-sm" href="/account/login" role="button">Авторизация</a>
         </div>
     </div>
     <br>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MySQL for 5.1 - bascms_db@localhost" uuid="e4074bee-27eb-4bc7-8652-8f1e22549e61">
-      <driver-ref>mysql</driver-ref>
+    <data-source source="LOCAL" name="bascms_db@192.168.1.83" uuid="5370c1d0-3f20-4bde-8106-713379e3f79c">
+      <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/bascms_db</jdbc-url>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://192.168.1.83:3306/bascms_db</jdbc-url>
     </data-source>
   </component>
 </project>

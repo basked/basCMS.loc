@@ -10,7 +10,7 @@ class DevController extends Controller
 {
     function indexAction()
     {
-        echo $this->route['id'];
+        migrate();
         echo 'indexAction';
 
     }

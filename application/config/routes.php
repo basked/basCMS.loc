@@ -13,10 +13,14 @@ return [
         'controller' => 'task',
         'action' => 'edit'
     ],
-
+   // account
     'account/login' => [
         'controller' => 'account',
         'action' => 'login'
+    ],
+    'account/logout' => [
+        'controller' => 'account',
+        'action' => 'logout'
     ],
     'account/register' => [
         'controller' => 'account',
@@ -34,6 +38,10 @@ return [
     ],
 
     // dev
+    'dev/index' => [
+        'controller' => 'dev',
+        'action' => 'index'
+    ],
     'dev/index/{id:\d+}' => [
         'controller' => 'dev',
         'action' => 'index'
