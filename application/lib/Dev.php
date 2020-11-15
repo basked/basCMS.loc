@@ -38,18 +38,18 @@ function migrateTasks()
 {
     // dump table tasks
     $tasks = [
-        ['id' => 1, 'name' => 'admin', 'email' => 'admin@tadmin.com', 'task_txt' => 'admin task txt', 'is_completed' => 1, 'is_edited' => 1],
-        ['id' => 2, 'name' => 'Eric', 'email' => 'eric@sp.com', 'task_txt' => 'admin task2 txt', 'is_completed' => 0, 'is_edited' => 0],
-        ['id' => 3, 'name' => 'Kenny', 'email' => 'kenny@sp.com', 'task_txt' => 'Eric task txt', 'is_completed' => 1, 'is_edited' => 1],
-        ['id' => 4, 'name' => 'Kyle', 'email' => 'kyle@sp.com', 'task_txt' => 'Kenny task txt', 'is_completed' => 0, 'is_edited' => 0],
-        ['id' => 5, 'name' => 'Stan', 'email' => 'stan@sp.com', 'task_txt' => 'Kyle task txt', 'is_completed' => 1, 'is_edited' => 1],
+        ['id' => 1, 'name' => 'admin', 'email' => 'admin@tadmin.com', 'description' => 'admin task txt', 'is_completed' => 1, 'is_edited' => 1],
+        ['id' => 2, 'name' => 'Eric', 'email' => 'eric@sp.com', 'description' => 'admin task2 txt', 'is_completed' => 0, 'is_edited' => 0],
+        ['id' => 3, 'name' => 'Kenny', 'email' => 'kenny@sp.com', 'description' => 'Eric task txt', 'is_completed' => 1, 'is_edited' => 1],
+        ['id' => 4, 'name' => 'Kyle', 'email' => 'kyle@sp.com', 'description' => 'Kenny task txt', 'is_completed' => 0, 'is_edited' => 0],
+        ['id' => 5, 'name' => 'Stan', 'email' => 'stan@sp.com', 'description' => 'Kyle task txt', 'is_completed' => 1, 'is_edited' => 1],
     ];
 
     $db = new \application\lib\Database();
     $db->query('DROP TABLE tasks ;');
-    $db->query('CREATE TABLE tasks(id int  NOT NULL AUTO_INCREMENT PRIMARY KEY, name varchar(20), email varchar(20), task_txt text, is_completed boolean, is_edited boolean );');
+    $db->query('CREATE TABLE tasks(id int  NOT NULL AUTO_INCREMENT PRIMARY KEY, name varchar(20), email varchar(20), description text, is_completed boolean, is_edited boolean );');
     foreach ($tasks as $task) {
-        $db->query('INSERT INTO tasks(id, name, email, task_txt, is_completed, is_edited) VALUES(:id, :name, :email, :task_txt, :is_completed, :is_edited)', $task);
+        $db->query('INSERT INTO tasks(id, name, email, description, is_completed, is_edited) VALUES(:id, :name, :email, :description, :is_completed, :is_edited)', $task);
     };
 }
 
