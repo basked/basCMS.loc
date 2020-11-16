@@ -6,25 +6,16 @@ use application\core\Controller;
 
 class DevController extends Controller
 {
-    function indexAction()
+    function migrateAction()
     {
         migrate();
-        echo 'indexAction';
-
+        echo 'CLEAR DATA AND MIGRATE';
     }
 
-    function addAction()
+    function clearAction()
     {
-        echo 'indexAction';
-        echo $this->route['name'];
-    }
-    function sortAction()
-    {
-        echo 'indexAction';
-        echo '<br>';
-        echo $this->route['sort'];
-        echo '<br>';
-        echo $this->route['limit'];
+        clear();
+        echo 'CLEAR DATA';
     }
 
 }

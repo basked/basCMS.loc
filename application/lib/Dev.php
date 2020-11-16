@@ -36,6 +36,14 @@ function migrateTasks()
 
 function migrate()
 {
-
     migrateTasks();
 }
+
+function clear()
+{
+    $db = new \application\lib\Database();
+    $db->query('DROP TABLE tasks ;');
+    $db->query('CREATE TABLE tasks(id int  NOT NULL AUTO_INCREMENT PRIMARY KEY, name varchar(20), email varchar(20), description text, completed boolean default 0, edited boolean default 0);');
+}
+
+

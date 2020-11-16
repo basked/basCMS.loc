@@ -49,15 +49,18 @@ return [
         'controller' => 'account',
         'action' => 'login'
     ],
-    'account/logout' => [
+    //dev
+    'account/logout/{type:\d+}' => [
         'controller' => 'account',
         'action' => 'logout'
     ],
-
-    // dev
-    'dev/index' => [
+    'dev/migrate' => [
         'controller' => 'dev',
-        'action' => 'index'
+        'action' => 'migrate'
+    ],
+    'dev/clear' => [
+        'controller' => 'dev',
+        'action' => 'clear'
     ],
 
 ];
