@@ -9,7 +9,13 @@ use application\core\View;
  */
 class Router
 {
+    /**
+     * @var array
+     */
     protected $routes = [];
+    /**
+     * @var array
+     */
     protected $params = [];
 
     /**
@@ -24,7 +30,7 @@ class Router
     }
 
     /**
-     * Add route
+     * Приводим к нужному виду все роуты из массива пропуская через ругулярки
      * @param $route
      * @param $params
      */
@@ -37,7 +43,7 @@ class Router
     }
 
     /**
-     * Route difine
+     *  Определение роута
      * @return bool
      */
     public function match()
@@ -62,6 +68,9 @@ class Router
         return false;
     }
 
+    /**
+     * Запускаем контроллер в соответсвие с роутом
+     */
     public function run()
     {
         if ($this->match()) {

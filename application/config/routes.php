@@ -17,7 +17,7 @@ return [
     ],
     '' => [
         'controller' => 'task',
-        'action' => 'tasks'
+        'action' => 'goTasks'
     ],
     'task/tasks/{page:\d+}' => [
         'controller' => 'task',

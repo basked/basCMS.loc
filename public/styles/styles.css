@@ -1,3 +1,23 @@
-.fa{
-    color: lightsteelblue;
+.fa-sort-desc,.fa-sort-asc  {
+    color: black;
+    visibility: hidden;
+}
+
+.active {
+    visibility: visible;
+    color: lavender;
+}
+
+th:hover .fa-sort-asc {
+    visibility: visible;
+    color: lavender;
+}
+
+th:hover .fa-sort-desc {
+    visibility: visible;
+    color: lavender;
+}
+
+.fa-edit {
+    color: darkorange;
 }

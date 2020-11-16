@@ -1,18 +1,18 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-sm-12">
             <p>
-            <h3><?php echo $title; ?></h3></p>
-
-
+            <h3><?php echo $title ?></h3></p>
             <hr>
+            <div id="alert_msg" class="alert alert-dismissible fade" role="alert">
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <form action="/tasks/edit/<?php echo $id; ?>" method="post">
                 <div class="form-group">
-                    <label for="email">Пользователь</label>
+                    <label for="email">Имя пользователя</label>
                     <input id="name" name="name" class="form-control" type="text"
                            value="<?php echo htmlspecialchars($task['name'], ENT_QUOTES); ?>">
                 </div>

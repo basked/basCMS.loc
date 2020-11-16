@@ -14,6 +14,7 @@ class Task extends Model
 
 
     /**
+     * Данные по задаче
      * Return all tasks
      * @return array
      */
@@ -25,6 +26,7 @@ class Task extends Model
     }
 
     /**
+     * Количество задач (для пагинации)
      * Return count tasks
      * @return array
      */
@@ -34,16 +36,13 @@ class Task extends Model
     }
 
     /**
-     * Return all tasks
+     * Все задачи
      * @param $route
      * @return mixed
      */
-    public function tasksList($route)
+    public function tasksList($route, $sortField = '', $sortType = '')
     {
-
         $max = 3;
-        $sortField = $_SESSION['sortField'];
-        $sortType = $_SESSION['sortType'];
         $params = [
             'max' => $max,
             'start' => ((($route['page'] ?? 1) - 1) * $max),
@@ -52,6 +51,7 @@ class Task extends Model
     }
 
     /**
+     * Добавление задачи
      * @param $post
      * @return string
      */
@@ -67,6 +67,11 @@ class Task extends Model
     }
 
 
+    /**
+     * Редактирование задачи
+     * @param $task
+     * @param $id
+     */
     public function taskEdit($task, $id)
     {
         $params = [
@@ -74,36 +79,44 @@ class Task extends Model
             'name' => $task['name'],
             'email' => $task['email'],
             'description' => $task['description'],
+            'edited' => !($task['description'] == $this->oldValueDecription($id)),
         ];
-        $this->db->query('UPDATE tasks SET name = :name, email = :email, description = :description, edited=1 WHERE id = :id', $params);
+        $this->db->query('UPDATE tasks SET name = :name, email = :email, description = :description, edited = :edited WHERE id = :id', $params);
     }
 
 
     /**
+     * Валидация введённых данных в форме
      * @param $post
      * @param $type
      * @return bool
      */
     public function taskValidate($post, $type)
     {
+        $err = '';
         $nameLen = iconv_strlen($post['name']);
         $emailLen = iconv_strlen($post['email']);
         $textLen = iconv_strlen($post['description']);
 
         if ($nameLen == 0) {
-            $this->error = 'Имя пользователя должно быть заполнено';
-            return false;
-        } elseif ($emailLen == 0 or (!filter_var($post['email'], FILTER_VALIDATE_EMAIL))) {
-            $this->error = 'Заполните корректно поле email';
-            return false;
-        } elseif ($textLen == 0) {
-            $this->error = 'Текст задачи не должен быть пустым';
+            $err = "* Заполните поле имя пользователя <br>";
+        };
+        if ($emailLen == 0 or (!filter_var($post['email'], FILTER_VALIDATE_EMAIL))) {
+            $err = $err . "* Заполните корректно поле email <br>";
+        }
+        if ($textLen == 0) {
+            $err = $err . '* Заполните поле описание задачи';
+        }
+        if ($err == '') {
+            return true;
+        } else {
+            $this->error = $err;
             return false;
         }
-        return true;
     }
 
     /**
+     * Существует ли задача
      * @param $id
      * @return array
      */
@@ -116,6 +129,20 @@ class Task extends Model
     }
 
     /**
+     * Находим текущее значение описания задачи
+     * @param $id
+     * @return array
+     */
+    public function oldValueDecription($id)
+    {
+        $params = [
+            'id' => $id,
+        ];
+        return $this->db->column('SELECT description FROM tasks WHERE id = :id', $params);
+    }
+
+    /**
+     * Данные задачи
      * @param $id
      * @return array
      */
@@ -127,6 +154,11 @@ class Task extends Model
         return $this->db->row('SELECT id, name, email,  description, completed, edited FROM tasks WHERE id=:id', $params);
     }
 
+    /**
+     * Установить задачу в статус выполнено
+     * @param $id
+     *
+     */
     public function taskCompleted($id)
     {
         $params = [

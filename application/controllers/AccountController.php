@@ -13,8 +13,15 @@ use application\models\Task;
  */
 class AccountController extends Controller
 {
+    /**
+     * @var
+     */
     public $error;
 
+    /**
+     * AccountController constructor.
+     * @param $route
+     */
     public function __construct($route)
     {
         parent::__construct($route);
@@ -30,26 +37,41 @@ class AccountController extends Controller
      */
     public function loginValidate($post)
     {
-        if ($post['login'] != 'admin' or $post['password'] != 123) {
-            $this->error = 'Логин или пароль указан неверно';
+
+        $err = '';
+        $nameLen = iconv_strlen($post['login']);
+        $passLen = iconv_strlen($post['password']);
+
+
+        if ($nameLen == 0) {
+            $err = "* Заполните имя пользователя <br>";
+        };
+        if ($passLen == 0) {
+            $err = $err . "* Заполните пароль <br>";
+        }
+        if ($err == '') {
+            if ($post['login'] != 'admin' or $post['password'] != 123) {
+                $this->error = 'Логин или пароль указан неверно';
+                return false;
+            }
+            return true;
+        } else {
+            $this->error = $err;
             return false;
         }
-        return true;
     }
 
+    /**
+     * Login
+     */
     public function loginAction()
     {
-        //можем в экшне переопределить путь к вьюхе
-        //$this->view->path='account/register';
-        //можем в экшне переопределить путь к layout
-        //$this->view->layout='custom';
-        //$this->view->layout='custom';
         if (!empty($_POST)) {
             if (!$this->loginValidate($_POST)) {
                 $this->view->message('error', $this->error);
             }
             $_SESSION['is_admin'] = true;
-            $this->view->location('/');
+            $this->view->location('/', 'Авторизация прошла успешно');
         }
         $this->view->render('Вход');
     }
@@ -63,12 +85,5 @@ class AccountController extends Controller
         $this->view->redirect('/');
     }
 
-    /**
-     *
-     */
-    function registerAction()
-    {
-        $this->view->render('Регистрация');
-    }
 
 }

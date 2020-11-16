@@ -1,8 +1,11 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
+            <p>
             <h3>Авторизация пользователя</h3>
-            <hr/>
+            <hr>
+            <div id="alert_msg" class="alert alert-dismissible fade" role="alert">
+            </div>
         </div>
         <div class="col-sm-12">
             <div class="container-md">

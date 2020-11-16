@@ -15,3 +15,14 @@ $("input[type=checkbox]").on("change", function () {
     }
 });
 
+function openAlert() {
+    //show
+    $('.alert').addClass('show');
+    $('#messageValid').show();
+
+}
+function closeAlert() {
+    //hide
+    $('.alert').removeClass('show');
+    $('#messageValid').hide();
+}

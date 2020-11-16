@@ -1,9 +1,3 @@
-<div class="alert alert-warning alert-dismissible fade hide" role="alert">
-    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
 <div class="container">
     <br>
     <div class="row">
@@ -34,13 +28,24 @@
             <table class="table table-dark">
                 <thead>
                 <tr>
-                    <th scope="col"><b>#</b>Имя пользователя <a href="/name_<?php echo $sortTypeTo ?>"
-                                                                class="fa fa-sort-<?php echo $sortType; ?>"></a></th>
-                    <th scope="col"><b>#</b>Email <a href="/email_<?php echo $sortTypeTo ?>"
-                                                     class="fa fa-sort-<?php echo $sortType; ?>"></a></th>
-                    <th scope="col"><b>#</b>Текст задачи <a href="/description_<?php echo $sortTypeTo ?>"
-                                                            class="fa fa-sort-<?php echo $sortType; ?>"></a></th>
-                    <th scope="col"><b>#</b>Статус <a href="/description_<?php echo $sortTypeTo ?>" class="fa fa-sort-desc"></a></th>
+                    <th scope="col">Имя пользователя <a
+                                href="/task/tasks/<?php echo $current_page ?>/name/<?php echo $sortTypeTo ?>"
+                                class="fa fa-sort-<?php echo $sortTypeTo; if ($sortField == 'name'){echo ' active';}?>"
+                        </a>
+                    </th>
+                    <th scope="col">Email <a
+                                href="/task/tasks/<?php echo $current_page ?>/email/<?php echo $sortTypeTo ?>"
+                                class="fa fa-sort-<?php echo $sortTypeTo; if ($sortField == 'email'){echo ' active';}?>"
+                        </a>
+                    </th>
+                    <th scope="col">Текст задачи <a
+                                href="/task/tasks/<?php echo $current_page ?>/description/<?php echo $sortTypeTo ?>"   class="fa fa-sort-<?php echo $sortTypeTo; if ($sortField == 'description'){echo ' active';}?>"
+                        </a>
+                    </th>
+                    <th scope="col">Статус <a
+                                href="/task/tasks/<?php echo $current_page ?>/completed/<?php echo $sortTypeTo ?>"   class="fa fa-sort-<?php echo $sortTypeTo; if ($sortField == 'completed'){echo ' active';}?>"
+                        </a>
+                    </th>
                     <?php if ($is_admin): ?>
                         <th scope="col">Действия</th>
                     <?php endif; ?>
@@ -52,10 +57,11 @@
                         <td> <?php echo htmlspecialchars($task['name'], ENT_QUOTES); ?> </td>
                         <td> <?php echo htmlspecialchars($task['email'], ENT_QUOTES); ?>  </td>
                         <td>
+                            <?php echo htmlspecialchars($task['description'], ENT_QUOTES); ?>
                             <?php if ($task['edited']): ?>
                                 <i class="fa fa-edit"></i>
                             <?php endif; ?>
-                            <?php echo htmlspecialchars($task['description'], ENT_QUOTES); ?></td>
+                        </td>
                         <td>
                             <div class="form-check">
                                 <input id="<?php echo $task['id']; ?>"
@@ -83,4 +89,7 @@
             <?php echo $pagination; ?>
         </div>
     </div>
+</div>
+<div class="alert alert-warning alert-dismissible fade" role="alert">
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
 </div>

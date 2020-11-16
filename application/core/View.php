@@ -113,8 +113,8 @@ class View
      * @param $status
      * @param $message
      */
-    public function location($url)
+    public function location($url, $msg='')
     {
-        exit(json_encode(['url' => $url]));
+        exit(json_encode(['url' => $url, 'msg'=>$msg]));
     }
 }

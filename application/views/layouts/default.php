@@ -20,5 +20,6 @@
 
 
 <script src="../../../public/scripts/javascript.js"></script>
+<script src="../../../public/scripts/popper.js"></script>
 </body>
 </html>

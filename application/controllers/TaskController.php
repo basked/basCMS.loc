@@ -17,21 +17,36 @@ class TaskController extends Controller
      */
     public $error;
 
+    /**
+     * TaskController constructor.
+     * @param $route
+     */
     public function __construct($route)
     {
         parent::__construct($route);
+        $this->initSession();
+    }
+
+    /**
+     * Инициализация переменных сессии
+     */
+    private function initSession()
+    {
         if (!isset($_SESSION['sortField'])) {
             $_SESSION['sortField'] = 'name';
         };
         if (!isset($_SESSION['sortType'])) {
-            $_SESSION['sortType'] = 'acs';
+            $_SESSION['sortType'] = 'asc';
         };
         if (!isset($_SESSION['sortTypeTo'])) {
             $_SESSION['sortTypeTo'] = 'desc';
         };
-
     }
 
+
+    /**
+     * Для одинковой сортировки на разных страницах
+     */
     public function tasksSortAction()
     {
         $_SESSION['sortField'] = $this->route['field'];
@@ -46,11 +61,10 @@ class TaskController extends Controller
 
 
     /**
-     * All tasks
+     *  Вывод всех задач с пагинацией
      */
     public function tasksAction()
     {
-        var_dump($_SESSION['sortField'], $_SESSION['sortType'], $_SESSION['sortTypeTo']);
         $taskModel = new Task();
         $pagination = new Pagination($this->route, $taskModel->tasksCount());
         $vars = [
@@ -59,7 +73,8 @@ class TaskController extends Controller
             'sortType' => $_SESSION['sortType'],
             'sortTypeTo' => $_SESSION['sortTypeTo'],
             'pagination' => $pagination->get(),
-            'tasks' => $taskModel->tasksList($this->route),
+            'current_page' => $this->route['page'],
+            'tasks' => $taskModel->tasksList($this->route, $_SESSION['sortField'], $_SESSION['sortType']),
         ];
         $this->view->render('Менеджер задач', $vars);
     }
@@ -86,10 +101,8 @@ class TaskController extends Controller
             if (!$id) {
                 $this->view->message('success', 'Ошибка обработки запроса');
             }
-            $this->view->message('success', 'Задача добавлена');
+            $this->view->location('/', 'Задача добавлена');
         }
-//        $this->view->render('Новая задача');
-        $this->view->location('/');
     }
 
     /**
@@ -111,15 +124,18 @@ class TaskController extends Controller
      */
     public function editAction()
     {
+        if (!isset($_SESSION['is_admin'])) {
+            $this->view->location('/account/login', 'Необходимо авторизоваться на сайте');
+        };
+
         if (is_null($this->model->isTaskExists($this->route['id']))) {
             $this->view->errorCode(404);
         }
-
         if (!$this->model->taskValidate($_POST, 'edit')) {
             $this->view->message('error', $this->model->error);
         }
         $this->model->taskEdit($_POST, $this->route['id']);
-        $this->view->message('success', 'Сохранено');
+        $this->view->location('/', 'Задача сохранена');
 
         $vars = [
             'data' => $this->model->taskData($this->route['id'])[0],
@@ -132,12 +148,19 @@ class TaskController extends Controller
      */
     public function completedAction()
     {
-        debug($this->route['id']);
         if (is_null($this->model->isTaskExists($this->route['id']))) {
 
             $this->view->errorCode(404);
         }
         $this->model->taskCompleted($this->route['id']);
+    }
+
+    /**
+     * Переход на главную страницу
+     */
+    public function goTasksAction()
+    {
+        $this->view->redirect('/task/tasks/1');
     }
 
 }

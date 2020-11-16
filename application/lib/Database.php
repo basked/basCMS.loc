@@ -28,6 +28,7 @@ class Database
 
 
     /**
+     * Для подготовки запросов
      * @param $sql
      * @return false|\PDOStatement
      */
@@ -53,6 +54,7 @@ class Database
     }
 
     /**
+     * Все столбцы
      * @param $sql
      * @param array $params
      * @return array
@@ -65,6 +67,7 @@ class Database
     }
 
     /**
+     * Конкретный столбец
      * Return col from query
      * @param $sql
      * @return array
@@ -76,6 +79,7 @@ class Database
     }
 
     /**
+     *
      * Return Last Insert Id
      * @return string
      */
