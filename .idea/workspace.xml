@@ -19,25 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96eaf278-872d-4669-90f0-aa57afa3712d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/scripts/popper.js" afterDir="false" />
+    <list default="true" id="96eaf278-872d-4669-90f0-aa57afa3712d" name="Default Changelist" comment="Final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AccountController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/TaskController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/lib/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Task.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/account/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/account/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/layouts/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layouts/default.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/task/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/task/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/task/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/task/show.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/task/tasks.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/task/tasks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/javascript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/javascript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/awesome.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605479913737</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Final">
+      <created>1605562248172</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1605562248172</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +243,8 @@
     <MESSAGE value="Add vars parameters in View (render fun) &#10;Errors pages,  errorCode fun&#10;Redirect fun  in View" />
     <MESSAGE value="\config\db.php&#10;\lib\Database.php" />
     <MESSAGE value="Task Controller index, add, edit methods&#10;Task View  - index, add, edit pages&#10; Task view - Logic behavior on(admin or user)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task Controller index, add, edit methods&#10;Task View  - index, add, edit pages&#10; Task view - Logic behavior on(admin or user)" />
+    <MESSAGE value="Final" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final" />
   </component>
   <component name="WindowStateProjectService">
     <state x="543" y="221" key="#Deployment" timestamp="1605441651551">
@@ -318,25 +314,25 @@
       <screen x="0" y="0" width="958" height="928" />
     </state>
     <state x="241" y="168" key="Github.UntrackedFilesDialog/0.0.958.928@0.0.958.928" timestamp="1604925866157" />
-    <state width="1625" height="282" key="GridCell.Tab.0.bottom" timestamp="1605558741886">
+    <state width="1625" height="282" key="GridCell.Tab.0.bottom" timestamp="1605563009887">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1625" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605558741886" />
+    <state width="1625" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605563009887" />
     <state width="294" height="245" key="GridCell.Tab.0.bottom/0.0.1920.944@0.0.1920.944" timestamp="1605355626308" />
-    <state width="1625" height="282" key="GridCell.Tab.0.center" timestamp="1605558741886">
+    <state width="1625" height="282" key="GridCell.Tab.0.center" timestamp="1605563009887">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1625" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605558741886" />
+    <state width="1625" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605563009887" />
     <state width="294" height="245" key="GridCell.Tab.0.center/0.0.1920.944@0.0.1920.944" timestamp="1605355626307" />
-    <state width="1625" height="282" key="GridCell.Tab.0.left" timestamp="1605558741886">
+    <state width="1625" height="282" key="GridCell.Tab.0.left" timestamp="1605563009887">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1625" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605558741886" />
+    <state width="1625" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605563009887" />
     <state width="294" height="245" key="GridCell.Tab.0.left/0.0.1920.944@0.0.1920.944" timestamp="1605355626307" />
-    <state width="1625" height="282" key="GridCell.Tab.0.right" timestamp="1605558741886">
+    <state width="1625" height="282" key="GridCell.Tab.0.right" timestamp="1605563009887">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1625" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605558741886" />
+    <state width="1625" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605563009887" />
     <state width="294" height="245" key="GridCell.Tab.0.right/0.0.1920.944@0.0.1920.944" timestamp="1605355626308" />
     <state x="191" y="182" key="MultipleFileMergeDialog" timestamp="1605329882742">
       <screen x="0" y="0" width="958" height="935" />
@@ -364,10 +360,10 @@
       <screen x="0" y="0" width="958" height="928" />
     </state>
     <state x="317" y="380" key="VCS.ChangelistChooser/0.0.958.928@0.0.958.928" timestamp="1604925966664" />
-    <state x="142" y="219" key="Vcs.Push.Dialog.v2" timestamp="1605479916536">
+    <state x="142" y="219" key="Vcs.Push.Dialog.v2" timestamp="1605562249479">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="142" y="219" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605479916536" />
+    <state x="142" y="219" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605562249479" />
     <state x="142" y="199" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1605123319111" />
     <state x="71" y="196" key="Vcs.Push.Dialog.v2/0.0.958.928@0.0.958.928" timestamp="1604929879722" />
     <state x="71" y="197" key="Vcs.Push.Dialog.v2/0.0.958.935@0.0.958.935" timestamp="1605274822587" />

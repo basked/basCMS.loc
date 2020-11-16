@@ -115,7 +115,7 @@ class TaskController extends Controller
             $this->view->errorCode(404);
         }
         $task = $this->model->getTask($this->route['id']);
-        $this->view->render('Редактировние задачи #' . $this->route['id'], ['task' => $task, 'id' => $this->route['id']]);
+        $this->view->render('Редактировние задачи', ['task' => $task, 'id' => $this->route['id']]);
     }
 
     /**
@@ -140,7 +140,7 @@ class TaskController extends Controller
         $vars = [
             'data' => $this->model->taskData($this->route['id'])[0],
         ];
-        $this->view->render('Редактировать пост', $vars);
+        $this->view->render('Редактировать задачу', $vars);
     }
 
     /**

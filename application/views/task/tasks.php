@@ -2,7 +2,7 @@
     <br>
     <div class="row">
         <?php if ($is_admin): ?>
-            <div class="col-sm-12">
+            <div class="col-sm-12" >
                 <a class="btn btn-outline-danger btn-sm  float-right" href="/account/logout" role="button">Выход</a>
             </div>
         <?php endif; ?>
@@ -19,7 +19,7 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <a class="btn btn-outline-dark btn-sm" href="/tasks/create" role="button">Новая задача</a>
+            <a class="btn btn-outline-dark btn-sm float-right" href="/tasks/create" role="button">Новая задача</a>
         </div>
     </div>
     <br>

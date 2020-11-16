@@ -6,7 +6,7 @@
     <script src="../../../public/scripts/jquery.js"></script>
     <script src="../../../public/scripts/form.js"></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="../../../public/styles/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../../public/styles/awesome.css"/>
     <link rel="stylesheet" href="../../../public/styles/bootstrap.min.css"/>
     <link rel="stylesheet" href="../../../public/styles/styles.css"/>
 

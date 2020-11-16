@@ -1,4 +1,4 @@
-.fa-sort-desc,.fa-sort-asc  {
+.fa-sort-desc, .fa-sort-asc {
     color: black;
     visibility: hidden;
 }
@@ -21,3 +21,5 @@ th:hover .fa-sort-desc {
 .fa-edit {
     color: darkorange;
 }
+
+/*END SORT*/
