@@ -11,7 +11,38 @@ use application\models\Task;
  */
 class TaskController extends Controller
 {
+
+    /**
+     * @var
+     */
     public $error;
+
+    public function __construct($route)
+    {
+        parent::__construct($route);
+        if (!isset($_SESSION['sortField'])) {
+            $_SESSION['sortField'] = 'name';
+        };
+        if (!isset($_SESSION['sortType'])) {
+            $_SESSION['sortType'] = 'acs';
+        };
+        if (!isset($_SESSION['sortTypeTo'])) {
+            $_SESSION['sortTypeTo'] = 'desc';
+        };
+
+    }
+
+    public function tasksSortAction()
+    {
+        $_SESSION['sortField'] = $this->route['field'];
+        $_SESSION['sortType'] = $this->route['type'];
+        if ($this->route['type'] == 'asc') {
+            $_SESSION['sortTypeTo'] = 'desc';
+        } else {
+            $_SESSION['sortTypeTo'] = 'asc';
+        }
+        $this->view->redirect('/task/tasks/' . $this->route['page']);
+    }
 
 
     /**
@@ -19,20 +50,9 @@ class TaskController extends Controller
      */
     public function tasksAction()
     {
+        var_dump($_SESSION['sortField'], $_SESSION['sortType'], $_SESSION['sortTypeTo']);
         $taskModel = new Task();
         $pagination = new Pagination($this->route, $taskModel->tasksCount());
-        if (isset($this->route['sort'])) {
-            $sortInfo = explode('_', $this->route['sort']);
-            if (sizeof($sortInfo) == 2) {
-                $_SESSION['sortField'] = $sortInfo[0];
-                $_SESSION['sortType'] = $sortInfo[1];
-                if ($_SESSION['sortType'] == 'desc') {
-                    $_SESSION['sortTypeTo'] = 'asc';
-                } else {
-                    $_SESSION['sortTypeTo'] = 'desc';
-                };
-            }
-        };
         $vars = [
             'is_admin' => isset($_SESSION['is_admin']),
             'sortField' => $_SESSION['sortField'],
@@ -66,7 +86,7 @@ class TaskController extends Controller
             if (!$id) {
                 $this->view->message('success', 'Ошибка обработки запроса');
             }
-//            $this->view->message('success', 'Задача добавлена');
+            $this->view->message('success', 'Задача добавлена');
         }
 //        $this->view->render('Новая задача');
         $this->view->location('/');
@@ -107,7 +127,10 @@ class TaskController extends Controller
         $this->view->render('Редактировать пост', $vars);
     }
 
-   public function completedAction()
+    /**
+     * Отметка о выполнении задачи
+     */
+    public function completedAction()
     {
         debug($this->route['id']);
         if (is_null($this->model->isTaskExists($this->route['id']))) {

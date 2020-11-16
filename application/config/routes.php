@@ -1,5 +1,15 @@
 <?php
 return [
+    // test
+    'dev/{sort:\d+}/{limit:\w+}' => [
+        'controller' => 'dev',
+        'action' => 'sort'
+    ],
+    'task/tasks/{page:\d+}/{field:\w+}/{type:\w+}' => [
+        'controller' => 'task',
+        'action' =>  'tasksSort',
+    ],
+
     // tasks
     '{sort:\w+}' => [
         'controller' => 'task',

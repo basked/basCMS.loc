@@ -14,10 +14,12 @@ use application\models\Task;
 class AccountController extends Controller
 {
     public $error;
-    public function __construct($route) {
+
+    public function __construct($route)
+    {
         parent::__construct($route);
         $this->view->layout = 'default';
-        $this->model='task';
+        $this->model = 'task';
 
     }
 
@@ -26,8 +28,9 @@ class AccountController extends Controller
      * @param $post
      * @return bool
      */
-    public function loginValidate($post) {
-        if ($post['login']!='admin' or  $post['password'] != 123) {
+    public function loginValidate($post)
+    {
+        if ($post['login'] != 'admin' or $post['password'] != 123) {
             $this->error = 'Логин или пароль указан неверно';
             return false;
         }
@@ -39,6 +42,7 @@ class AccountController extends Controller
         //можем в экшне переопределить путь к вьюхе
         //$this->view->path='account/register';
         //можем в экшне переопределить путь к layout
+        //$this->view->layout='custom';
         //$this->view->layout='custom';
         if (!empty($_POST)) {
             if (!$this->loginValidate($_POST)) {

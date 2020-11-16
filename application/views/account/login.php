@@ -4,7 +4,7 @@
             <h3>Авторизация пользователя</h3>
             <hr/>
         </div>
-       <div class="col-sm-12">
+        <div class="col-sm-12">
             <div class="container-md">
                 <form action="/account/login" method="post">
                     <div class="form-group">

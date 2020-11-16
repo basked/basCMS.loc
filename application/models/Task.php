@@ -12,14 +12,15 @@ use application\core\Model;
 class Task extends Model
 {
 
+
     /**
      * Return all tasks
      * @return array
      */
     public function getTask($id)
     {
-        $params=['id'=>$id];
-        $tasks = $this->db->row('SELECT  name, email, description FROM tasks  WHERE  id=:id',$params);
+        $params = ['id' => $id];
+        $tasks = $this->db->row('SELECT  name, email, description FROM tasks  WHERE  id=:id', $params);
         return $tasks[0];
     }
 
@@ -27,7 +28,8 @@ class Task extends Model
      * Return count tasks
      * @return array
      */
-    public function tasksCount() {
+    public function tasksCount()
+    {
         return $this->db->column('SELECT COUNT(id) FROM tasks');
     }
 
@@ -36,7 +38,8 @@ class Task extends Model
      * @param $route
      * @return mixed
      */
-    public function tasksList($route) {
+    public function tasksList($route)
+    {
 
         $max = 3;
         $sortField = $_SESSION['sortField'];
@@ -45,17 +48,18 @@ class Task extends Model
             'max' => $max,
             'start' => ((($route['page'] ?? 1) - 1) * $max),
         ];
-        return $this->db->row('SELECT id, name, email,  description, completed, edited FROM tasks   ORDER BY '.$sortField.' '. $sortType.'  LIMIT :start, :max', $params);
+        return $this->db->row('SELECT id, name, email,  description, completed, edited FROM tasks   ORDER BY ' . $sortField . ' ' . $sortType . '  LIMIT :start, :max', $params);
     }
 
     /**
      * @param $post
      * @return string
      */
-    public function taskAdd($post) {
+    public function taskAdd($post)
+    {
         $params = [
             'name' => $post['name'],
-            'email' =>  $post['email'],
+            'email' => $post['email'],
             'description' => $post['description'],
         ];
         $this->db->query('INSERT INTO tasks( name, email, description) VALUES(:name, :email, :description)', $params);
@@ -63,7 +67,8 @@ class Task extends Model
     }
 
 
-    public function taskEdit($task, $id) {
+    public function taskEdit($task, $id)
+    {
         $params = [
             'id' => $id,
             'name' => $task['name'],
@@ -79,12 +84,13 @@ class Task extends Model
      * @param $type
      * @return bool
      */
-    public function taskValidate($post, $type) {
+    public function taskValidate($post, $type)
+    {
         $nameLen = iconv_strlen($post['name']);
         $emailLen = iconv_strlen($post['email']);
         $textLen = iconv_strlen($post['description']);
 
-        if ($nameLen== 0) {
+        if ($nameLen == 0) {
             $this->error = 'Имя пользователя должно быть заполнено';
             return false;
         } elseif ($emailLen == 0 or (!filter_var($post['email'], FILTER_VALIDATE_EMAIL))) {
@@ -101,7 +107,8 @@ class Task extends Model
      * @param $id
      * @return array
      */
-    public function isTaskExists($id) {
+    public function isTaskExists($id)
+    {
         $params = [
             'id' => $id,
         ];
@@ -112,14 +119,16 @@ class Task extends Model
      * @param $id
      * @return array
      */
-    public function taskData($id) {
+    public function taskData($id)
+    {
         $params = [
             'id' => $id,
         ];
         return $this->db->row('SELECT id, name, email,  description, completed, edited FROM tasks WHERE id=:id', $params);
     }
 
-    public function taskCompleted($id) {
+    public function taskCompleted($id)
+    {
         $params = [
             'id' => $id,
         ];

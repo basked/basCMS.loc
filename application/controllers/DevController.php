@@ -1,6 +1,7 @@
 <?php
 
 namespace application\controllers;
+
 use application\core\Controller;
 
 class DevController extends Controller
@@ -17,4 +18,13 @@ class DevController extends Controller
         echo 'indexAction';
         echo $this->route['name'];
     }
+    function sortAction()
+    {
+        echo 'indexAction';
+        echo '<br>';
+        echo $this->route['sort'];
+        echo '<br>';
+        echo $this->route['limit'];
+    }
+
 }

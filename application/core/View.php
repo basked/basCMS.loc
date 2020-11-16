@@ -49,7 +49,6 @@ class View
     function render($title, $vars = [])
     {
         extract($vars);
-
         $pathView = 'application/views/' . $this->path . '.php';
         if (file_exists($pathView)) {
             // перед загрузкой контента запускаем ob_start
@@ -62,14 +61,12 @@ class View
             self::errorCode(404, 'View ' . $this->path . ' not found');
         }
         $pathLayout = 'application/views/layouts/' . $this->layout . '.php';
-
         // подключаем шаблон
         if (file_exists($pathLayout)) {
             require $pathLayout;
         } else {
             self::errorCode(404, 'Layout ' . $this->layout . ' not found');
         }
-
     }
 
     /**
@@ -106,16 +103,18 @@ class View
      * @param $status
      * @param $message
      */
-     public function message($status,$message){
-         exit(json_encode(['status'=>$status,'message'=>$message]));
-     }
+    public function message($status, $message)
+    {
+        exit(json_encode(['status' => $status, 'message' => $message]));
+    }
 
     /**
      * Redirect for JS
      * @param $status
      * @param $message
      */
-    public function location($url){
-        exit(json_encode(['url'=>$url]));
+    public function location($url)
+    {
+        exit(json_encode(['url' => $url]));
     }
 }

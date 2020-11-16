@@ -10,7 +10,8 @@ $("input[type=checkbox]").on("change", function () {
                 console.log(data);
             }
         });
-
+    } else {
+        $(".alert").alert('close')
     }
-
 });
+

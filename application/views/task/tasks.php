@@ -1,3 +1,9 @@
+<div class="alert alert-warning alert-dismissible fade hide" role="alert">
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 <div class="container">
     <br>
     <div class="row">
@@ -34,7 +40,7 @@
                                                      class="fa fa-sort-<?php echo $sortType; ?>"></a></th>
                     <th scope="col"><b>#</b>Текст задачи <a href="/description_<?php echo $sortTypeTo ?>"
                                                             class="fa fa-sort-<?php echo $sortType; ?>"></a></th>
-                    <th scope="col"><b>#</b>Статус <i class="fa fa-sort-desc" aria-hidden="true"></i></th>
+                    <th scope="col"><b>#</b>Статус <a href="/description_<?php echo $sortTypeTo ?>" class="fa fa-sort-desc"></a></th>
                     <?php if ($is_admin): ?>
                         <th scope="col">Действия</th>
                     <?php endif; ?>
