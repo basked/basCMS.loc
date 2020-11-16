@@ -21,15 +21,18 @@ return [
         'controller' => 'task',
         'action' => 'add'
     ],
+    'tasks/show/{id:\d+}' => [
+        'controller' => 'task',
+        'action' => 'show'
+    ],
     'tasks/edit/{id:\d+}' => [
         'controller' => 'task',
         'action' => 'edit'
     ],
-    'tasks/delete/{id:\d+}' => [
+    'tasks/completed/{id:\d+}' => [
         'controller' => 'task',
-        'action' => 'delete'
+        'action' => 'completed'
     ],
-
 
     // account
     'account/login' => [
@@ -46,16 +49,5 @@ return [
         'controller' => 'dev',
         'action' => 'index'
     ],
-    'dev/index/{id:\d+}' => [
-        'controller' => 'dev',
-        'action' => 'index'
-    ],
-    'dev/add/{name:\w+}' => [
-        'controller' => 'dev',
-        'action' => 'add'
-    ],
-    'dev/add' => [
-        'controller' => 'dev',
-        'action' => 'add'
-    ],
+
 ];

@@ -45,29 +45,16 @@ class TaskController extends Controller
     }
 
     /**
-     * Sort order by asc
+     * Показываем вью для создания задачи
      */
-    public function sortAscAction()
+    public function createAction()
     {
-        $_SESSION['sortField'] = $this->route['field'];
-        $_SESSION['sortType'] = 'desc';
-        $this->view->path = 'task/tasks';
-        $this->tasksAction();
+        $this->view->render('Новая задача');
     }
 
-    /**
-     * Sort order by desc
-     */
-    public function sortDecsAction()
-    {
-        $_SESSION['sortField'] = $this->route['field'];
-        $_SESSION['sortType'] = 'acs';
-        $this->view->path = 'task/tasks';
-        $this->tasksAction();
-    }
 
     /**
-     * Add tasks
+     * Добавление новой задачи
      */
     public function addAction()
     {
@@ -86,20 +73,48 @@ class TaskController extends Controller
     }
 
     /**
-     * Edit tasks
+     *  Показываем вью для редактирования задачи
+     *
      */
-    public function editAction()
+    public function showAction()
     {
-        $task = $this->model->oneTask($this->route['id']);
-        $this->view->render('Редактировние задачи #' . $this->route['id'], ['task' => $task]);
+        if (is_null($this->model->isTaskExists($this->route['id']))) {
+            $this->view->errorCode(404);
+        }
+        $task = $this->model->getTask($this->route['id']);
+        $this->view->render('Редактировние задачи #' . $this->route['id'], ['task' => $task, 'id' => $this->route['id']]);
     }
 
     /**
-     * Create tasks
+     * Редактирование задачи
+     *
      */
-    public function createAction()
+    public function editAction()
     {
-        $this->view->render('Новая задача');
+        if (is_null($this->model->isTaskExists($this->route['id']))) {
+            $this->view->errorCode(404);
+        }
+
+        if (!$this->model->taskValidate($_POST, 'edit')) {
+            $this->view->message('error', $this->model->error);
+        }
+        $this->model->taskEdit($_POST, $this->route['id']);
+        $this->view->message('success', 'Сохранено');
+
+        $vars = [
+            'data' => $this->model->taskData($this->route['id'])[0],
+        ];
+        $this->view->render('Редактировать пост', $vars);
+    }
+
+   public function completedAction()
+    {
+        debug($this->route['id']);
+        if (is_null($this->model->isTaskExists($this->route['id']))) {
+
+            $this->view->errorCode(404);
+        }
+        $this->model->taskCompleted($this->route['id']);
     }
 
 }

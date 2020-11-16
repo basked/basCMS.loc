@@ -17,5 +17,6 @@
 <?php echo $content; ?>
 
  <script src="../../../public/scripts/bootstrap.bundle.min.js"></script>
+ <script src="../../../public/scripts/javascript.js"></script>
 </body>
 </html>

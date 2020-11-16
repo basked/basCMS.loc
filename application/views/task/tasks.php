@@ -1,5 +1,5 @@
 <div class="container">
-     <br>
+    <br>
     <div class="row">
         <?php if ($is_admin): ?>
             <div class="col-sm-12">
@@ -12,7 +12,8 @@
             </div>
         <?php endif; ?>
         <div class="col-sm-12">
-            <p><h3><?php echo $title ?></h3></p>
+            <p>
+            <h3><?php echo $title ?></h3></p>
             <hr>
         </div>
     </div>
@@ -27,10 +28,13 @@
             <table class="table table-dark">
                 <thead>
                 <tr>
-                    <th scope="col"><b>#</b>Имя пользователя <a href="/name_<?php echo $sortTypeTo?>" class="fa fa-sort-<?php echo $sortType;?>"></a></th>
-                    <th scope="col"><b>#</b>Email <a href="/email_<?php echo $sortTypeTo?>" class="fa fa-sort-<?php echo $sortType;?>"></a></th>
-                    <th scope="col"><b>#</b>Текст задачи <a href="/description_<?php echo $sortTypeTo?>" class="fa fa-sort-<?php echo $sortType;?>"></a></th>
-                     <th scope="col"><b>#</b>Статус <i class="fa fa-sort-desc" aria-hidden="true"></i></th>
+                    <th scope="col"><b>#</b>Имя пользователя <a href="/name_<?php echo $sortTypeTo ?>"
+                                                                class="fa fa-sort-<?php echo $sortType; ?>"></a></th>
+                    <th scope="col"><b>#</b>Email <a href="/email_<?php echo $sortTypeTo ?>"
+                                                     class="fa fa-sort-<?php echo $sortType; ?>"></a></th>
+                    <th scope="col"><b>#</b>Текст задачи <a href="/description_<?php echo $sortTypeTo ?>"
+                                                            class="fa fa-sort-<?php echo $sortType; ?>"></a></th>
+                    <th scope="col"><b>#</b>Статус <i class="fa fa-sort-desc" aria-hidden="true"></i></th>
                     <?php if ($is_admin): ?>
                         <th scope="col">Действия</th>
                     <?php endif; ?>
@@ -39,13 +43,18 @@
                 <tbody>
                 <?php foreach ($tasks as $task): ?>
                     <tr>
-                        <td> <?php echo $task['name']; ?> </td>
-                        <td> <?php echo $task['email']; ?>  </td>
-                        <td> <?php echo htmlspecialchars( $task['description'], ENT_QUOTES); ?></td>
+                        <td> <?php echo htmlspecialchars($task['name'], ENT_QUOTES); ?> </td>
+                        <td> <?php echo htmlspecialchars($task['email'], ENT_QUOTES); ?>  </td>
+                        <td>
+                            <?php if ($task['edited']): ?>
+                                <i class="fa fa-edit"></i>
+                            <?php endif; ?>
+                            <?php echo htmlspecialchars($task['description'], ENT_QUOTES); ?></td>
                         <td>
                             <div class="form-check">
-                                <input id="chk_completed_task"
-                                    <?php if ($task['is_completed']): ?>
+                                <input id="<?php echo $task['id']; ?>"
+                                       name=""
+                                    <?php if ($task['completed']): ?>
                                         checked
                                     <?php endif; ?>
                                     <?php if (!$is_admin): ?>
@@ -57,7 +66,7 @@
                         <td>
                             <?php if ($is_admin): ?>
                                 <a class="btn btn-light btn-sm"
-                                   <?php echo "href=/tasks/edit/" . $task['id'] ?>
+                                   href=<?php echo '/tasks/show/' . $task['id'] ?>
                                    role="button">Редактировать</a>
                             <?php endif; ?>
                         </td>

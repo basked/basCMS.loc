@@ -16,10 +16,10 @@ class Task extends Model
      * Return all tasks
      * @return array
      */
-    public function oneTask($id)
+    public function getTask($id)
     {
         $params=['id'=>$id];
-        $tasks = $this->db->row('SELECT name, email, description FROM tasks  WHERE  id=:id',$params);
+        $tasks = $this->db->row('SELECT  name, email, description FROM tasks  WHERE  id=:id',$params);
         return $tasks[0];
     }
 
@@ -45,7 +45,7 @@ class Task extends Model
             'max' => $max,
             'start' => ((($route['page'] ?? 1) - 1) * $max),
         ];
-        return $this->db->row('SELECT id, name, email,  description, is_completed, is_edited FROM tasks   ORDER BY '.$sortField.' '. $sortType.'  LIMIT :start, :max', $params);
+        return $this->db->row('SELECT id, name, email,  description, completed, edited FROM tasks   ORDER BY '.$sortField.' '. $sortType.'  LIMIT :start, :max', $params);
     }
 
     /**
@@ -62,28 +62,68 @@ class Task extends Model
         return $this->db->lastInsertId();
     }
 
+
+    public function taskEdit($task, $id) {
+        $params = [
+            'id' => $id,
+            'name' => $task['name'],
+            'email' => $task['email'],
+            'description' => $task['description'],
+        ];
+        $this->db->query('UPDATE tasks SET name = :name, email = :email, description = :description, edited=1 WHERE id = :id', $params);
+    }
+
+
     /**
      * @param $post
      * @param $type
      * @return bool
      */
     public function taskValidate($post, $type) {
-
         $nameLen = iconv_strlen($post['name']);
         $emailLen = iconv_strlen($post['email']);
         $textLen = iconv_strlen($post['description']);
 
-        if ($nameLen < 3 or $nameLen > 100) {
-            $this->error = 'Название должно содержать от 3 до 100 символов';
+        if ($nameLen== 0) {
+            $this->error = 'Имя пользователя должно быть заполнено';
             return false;
-        } elseif ($emailLen < 3 or $emailLen > 100) {
-            $this->error = 'Описание должно содержать от 3 до 100 символов';
+        } elseif ($emailLen == 0 or (!filter_var($post['email'], FILTER_VALIDATE_EMAIL))) {
+            $this->error = 'Заполните корректно поле email';
             return false;
-        } elseif ($textLen < 5 or $textLen > 5000) {
-            $this->error = 'Текст должнен содержать от 5 до 5000 символов';
+        } elseif ($textLen == 0) {
+            $this->error = 'Текст задачи не должен быть пустым';
             return false;
         }
         return true;
+    }
+
+    /**
+     * @param $id
+     * @return array
+     */
+    public function isTaskExists($id) {
+        $params = [
+            'id' => $id,
+        ];
+        return $this->db->column('SELECT id FROM tasks WHERE id = :id', $params);
+    }
+
+    /**
+     * @param $id
+     * @return array
+     */
+    public function taskData($id) {
+        $params = [
+            'id' => $id,
+        ];
+        return $this->db->row('SELECT id, name, email,  description, completed, edited FROM tasks WHERE id=:id', $params);
+    }
+
+    public function taskCompleted($id) {
+        $params = [
+            'id' => $id,
+        ];
+        $this->db->query('UPDATE tasks SET  completed=1 WHERE id = :id', $params);
     }
 
 
