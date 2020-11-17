@@ -50,7 +50,7 @@ return [
         'action' => 'login'
     ],
     //dev
-    'account/logout/{type:\d+}' => [
+    'account/logout' => [
         'controller' => 'account',
         'action' => 'logout'
     ],
