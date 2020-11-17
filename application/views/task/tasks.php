@@ -38,7 +38,7 @@
                                 class="fa fa-sort-<?php echo $sortTypeTo; if ($sortField == 'email'){echo ' active';}?>"
                         </a>
                     </th>
-                    <th scope="col">Текст задачи <a
+                    <th scope="col">Описание задачи <a
                                 href="/task/tasks/<?php echo $current_page ?>/description/<?php echo $sortTypeTo ?>"   class="fa fa-sort-<?php echo $sortTypeTo; if ($sortField == 'description'){echo ' active';}?>"
                         </a>
                     </th>
