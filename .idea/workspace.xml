@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="96eaf278-872d-4669-90f0-aa57afa3712d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +148,7 @@
       <workItem from="1605078732823" duration="43382000" />
       <workItem from="1605379400860" duration="15653000" />
       <workItem from="1605428693990" duration="44033000" />
-      <workItem from="1605528811556" duration="6356000" />
+      <workItem from="1605528811556" duration="6973000" />
     </task>
     <task id="LOCAL-00001">
       <created>1604925911168</created>
@@ -256,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605534731831</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Final commit">
+      <created>1605590464727</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1605590464727</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +290,8 @@
     <MESSAGE value="\config\db.php&#10;\lib\Database.php" />
     <MESSAGE value="Task Controller index, add, edit methods&#10;Task View  - index, add, edit pages&#10; Task view - Logic behavior on(admin or user)" />
     <MESSAGE value="Edit pagination and sorting data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit pagination and sorting data" />
+    <MESSAGE value="Final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="543" y="221" key="#Deployment" timestamp="1605441651551">
@@ -332,10 +339,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="669" y="168" key="#tasks.sql/0.0.1920.1040@0.0.1920.1040" timestamp="1605448764828" />
-    <state x="166" y="56" key="CommitChangelistDialog2" timestamp="1605534731088">
+    <state x="166" y="56" key="CommitChangelistDialog2" timestamp="1605590464278">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="166" y="56" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1605534731088" />
+    <state x="166" y="56" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1605590464278" />
     <state x="83" y="55" key="CommitChangelistDialog2/0.0.958.928@0.0.958.928" timestamp="1604929847427" />
     <state x="83" y="55" key="CommitChangelistDialog2/0.0.958.935@0.0.958.935" timestamp="1605274820342" />
     <state x="91" y="143" width="1720" height="840" key="DiffContextDialog" timestamp="1605437484443">
@@ -397,11 +404,11 @@
       <screen x="0" y="0" width="958" height="928" />
     </state>
     <state x="317" y="380" key="VCS.ChangelistChooser/0.0.958.928@0.0.958.928" timestamp="1604925966664" />
-    <state x="142" y="199" key="Vcs.Push.Dialog.v2" timestamp="1605534733756">
+    <state x="142" y="199" key="Vcs.Push.Dialog.v2" timestamp="1605590467029">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="142" y="219" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605479916536" />
-    <state x="142" y="199" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1605534733756" />
+    <state x="142" y="199" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1605590467029" />
     <state x="71" y="196" key="Vcs.Push.Dialog.v2/0.0.958.928@0.0.958.928" timestamp="1604929879722" />
     <state x="71" y="197" key="Vcs.Push.Dialog.v2/0.0.958.935@0.0.958.935" timestamp="1605274822587" />
     <state x="772" y="402" width="376" height="271" key="com.intellij.database.actions.DdlActions$CommentOnObjectAction$1" timestamp="1605476008990">
